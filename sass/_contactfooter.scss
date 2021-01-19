@@ -1,0 +1,490 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    min-height: 130vh;
+
+    &__title {
+        position: relative;
+        margin-top: 10%;
+        padding-left: 10%;
+        font-size: 2.3rem;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 80%;
+            width: 50%;
+            height: 1%;
+            background-color: black;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 5%;
+            left: 8%;
+            width: 7%;
+            height: 50%;
+            background-color: $first-color;
+            opacity: .4;
+        }
+    }
+
+    &__description {
+        font-size: 1.4rem;
+        text-align: center;
+        margin-top: 5%;
+    }
+
+    &__media {
+        display: flex;
+        position: absolute;
+        width: 100%;
+        bottom: 5%;
+        left: 0;
+        justify-content: space-around;
+
+        .fab {
+            font-size: 3rem;
+            text-align: center;
+            transition: .2s linear;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+            &:nth-child(1) {
+                color: rgb(8, 99, 185);
+            }
+
+            &:nth-child(2) {
+                color: rgb(110, 81, 103);
+            }
+
+            &:nth-child(3) {
+                color: rgb(112, 198, 226);
+            }
+
+        }
+    }
+}
+
+
+.formwrapper {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: 15% auto;
+
+    &__item {
+        font-size: 1.2rem;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid black;
+    }
+
+    &__msg {
+        margin-top: 3%;
+        width: 100%;
+        height: 200px;
+        resize: none;
+        font-size: 1.2rem;
+        padding: 10px;
+        border: 1px solid black;
+    }
+
+    &__btn {
+        position: absolute;
+        bottom: 25%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.3rem;
+        cursor: pointer;
+        font-family: $font;
+        text-transform: uppercase;
+        border: 1px solid black;
+        width: 30%;
+        margin: 0 auto;
+        transition: .4s;
+
+        &:active {
+            bottom: 23%;
+            left: 52%;
+
+            &::after {
+                top: -18%;
+                left: -10%;
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            width: 105%;
+            height: 110%;
+            background-color: $first-color;
+            opacity: .4;
+            transition: .4s;
+        }
+    }
+}
+
+.footwrapper {
+    width: 100%;
+    height: 10vh;
+    background-color: rgba($first-color, .4);
+
+    &__description {
+        text-align: center;
+        line-height: 10vh;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 320px) and (orientation: portrait) {
+    .formwrapper {
+        &__btn {
+            bottom: 20%;
+
+            &:active {
+                bottom: 18%;
+            }
+        }
+    }
+}
+
+@media (min-width: 411px) and (orientation: portrait) {
+    .contact {
+        &__title {
+            font-size: 2.6rem;
+        }
+
+        &__description {
+            font-size: 1.8rem;
+        }
+
+        .fab {
+            font-size: 3.5rem;
+        }
+
+        .formwrapper {
+            &__item {
+                font-size: 1.5rem;
+            }
+
+            &__msg {
+                margin-top: 10%;
+                font-size: 1.5rem;
+            }
+
+            &__btn {
+                font-size: 1.5rem;
+                bottom: 20%;
+
+                &:active {
+                    bottom: 18%;
+                }
+            }
+        }
+    }
+
+    .footwrapper {
+        &__description {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+    .contact {
+        &__title {
+            font-size: 5rem;
+        }
+
+        &__description {
+            font-size: 2.6rem;
+        }
+
+        .fab {
+            font-size: 6rem;
+        }
+
+        .formwrapper {
+            &__item {
+                font-size: 2.3rem;
+            }
+
+            &__msg {
+                margin-top: 15%;
+                font-size: 2.3rem;
+            }
+
+            &__btn {
+                font-size: 2.5rem;
+            }
+        }
+    }
+
+    .footwrapper {
+        &__description {
+            font-size: 2.3rem;
+        }
+    }
+}
+
+@media (min-width: 1024px) and (orientation: portrait) {
+    .contact {
+        &__description {
+            font-size: 3.5rem;
+        }
+
+        .fab {
+            font-size: 7rem;
+        }
+
+        .formwrapper {
+            &__item {
+                font-size: 3rem;
+            }
+
+            &__msg {
+                margin-top: 13%;
+                font-size: 3rem;
+                height: 350px;
+                padding: 40px;
+            }
+
+            &__btn {
+                font-size: 3rem;
+            }
+        }
+    }
+
+    .footwrapper {
+        &__description {
+            font-size: 2.6rem;
+        }
+    }
+}
+
+@media (min-width: 568px) and (orientation: landscape) {
+    .contact {
+        min-height: 250vh;
+
+        &__title {
+            margin-top: 5%;
+
+            &::before {
+                width: 30%;
+            }
+
+            &::after {
+                width: 4.9%;
+            }
+        }
+
+        .formwrapper {
+            margin-top: 10%;
+
+            &__btn {
+                width: 20%;
+                bottom: 20%;
+
+                &:active {
+                    bottom: 18%;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 640px) and (orientation: landscape) {
+    .contact {
+        &__title {
+            &::after {
+                width: 4.7%;
+            }
+        }
+        .formwrapper {
+            &__btn {
+                bottom: 25%;
+
+                &:active {
+                    bottom: 23%;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 731px) and (orientation: landscape) {
+    .contact {
+        &__title {
+            &::after {
+                width: 4.5%;
+            }
+        }
+    }
+}
+
+@media (min-width: 812px) and (orientation: landscape) {
+    .contact {
+        &__title {
+            &::after {
+                width: 4.1%;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+    .contact {
+        min-height: 100vh;
+
+        &__title {
+            font-size: 3.5rem;
+
+            &::before {
+                top: 90%;
+                width: 30%;
+                height: 1px;
+            }
+
+            &::after {
+                top: 5%;
+                left: 8.7%;
+                width: 4%;
+                height: 55%;
+            }
+        }
+
+        &__description {
+            font-size: 2rem;
+        }
+
+        &__media {
+            flex-direction: column;
+            width: 10%;
+            height: 50%;
+            bottom: 14%;
+            left: 80%;
+
+            .fab {
+                font-size: 3.5rem;
+            }
+        }
+
+        .formwrapper {
+            width: 40%;
+            margin-left: 10%;
+
+            &__item {
+                margin-top: 5%;
+                font-size: 1.5rem;
+            }
+
+            &__msg {
+                font-size: 1.5rem;
+            }
+
+            &__btn {
+                bottom: 10%;
+                left: 30%;
+                width: 10%;
+
+                &:hover {
+                    bottom: 8%;
+                    left: 32%;
+
+                    &::after {
+                        top: -20%;
+                        left: -10%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1366px) and (orientation: landscape) {
+    .contact {
+        &__title {
+            font-size: 3.5rem;
+        }
+
+        &__description {
+            font-size: 2rem;
+        }
+
+        &__media {
+            bottom: 17%;
+
+            .fab {
+                font-size: 3rem;
+            }
+        }
+
+        .formwrapper {
+            margin-top: 5%;
+
+            &__item {
+                margin-top: 5%;
+                font-size: 1.3rem;
+            }
+
+            &__msg {
+                margin-top: 5%;
+                font-size: 1.3rem;
+            }
+
+            &__btn {
+                font-size: 1.3rem;
+                width: 12%;
+            }
+        }
+    }
+
+    .footwrapper {
+        &__description {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+@media (min-width: 1600px) and (orientation: landscape) {
+    .contact {
+        &__description {
+            font-size: 3rem;
+        }
+        &__media {
+            bottom: 17%;
+            .fab {
+                font-size: 6rem;
+            }
+        }
+        .formwrapper {
+            &__item {
+                font-size: 2.3rem;
+            }
+            &__msg {
+                font-size: 2.3rem;
+                height: 300px;
+                padding: 20px;
+            }
+            &__btn {
+                font-size: 2.3rem;
+            }
+        }
+    }
+    .footwrapper {
+        &__description {
+            font-size: 2.3rem;
+        }
+    }
+}
